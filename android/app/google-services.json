@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1020294372115",
+    "project_id": "quick-read-app-2024",
+    "storage_bucket": "quick-read-app-2024.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020294372115:android:dd5b6f9f3f4752994918e6",
+        "android_client_info": {
+          "package_name": "com.quickread.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvX7PpcO6Zf_KXdmFR8ioYK4qkmZGbODo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,10 +1,9 @@
-import 'dart:typed_data';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
-import 'package:image_picker/image_picker.dart';
-import 'package:flutter_gemini/flutter_gemini.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart'; // Importa o pacote de widgets do Flutter
+import 'package:firebase_auth/firebase_auth.dart'; // Importa o pacote do Firebase para autenticação de usuários
+import 'package:flutter_markdown/flutter_markdown.dart'; // Importa a biblioteca de markdown
+import 'package:image_picker/image_picker.dart'; // Importa a biblioteca de selecionar imagem
+import 'package:flutter_gemini/flutter_gemini.dart'; // Importa a biblioteca do Gemini
+import 'package:flutter/foundation.dart'; // Importa tipos primitivos do Flutter
 import 'package:quick_read/degrade.dart'; // Importa o Container com o degrade de fundo
 
 class ResumoPage extends StatefulWidget {

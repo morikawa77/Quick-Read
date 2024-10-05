@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart'; // Importa o pacote de widgets do Flutter
 import 'package:firebase_auth/firebase_auth.dart'; // Importa o pacote do Firebase para autenticação
 import 'package:quick_read/create-user.dart'; // Importa a tela de criação de usuário
-import 'package:quick_read/main.dart'; // Importa a tela principal
 import 'package:quick_read/resumo.dart'; // Importa a tela de resumo
 import 'package:quick_read/degrade.dart'; // Importa o Container com o degrade de fundo
 

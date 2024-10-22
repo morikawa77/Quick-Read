@@ -1,10 +1,12 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart'; // Importa o pacote de widgets do Flutter
 import 'package:firebase_auth/firebase_auth.dart'; // Importa o pacote do Firebase para autenticação de usuários
 import 'package:flutter_markdown/flutter_markdown.dart'; // Importa a biblioteca de markdown
 import 'package:image_picker/image_picker.dart'; // Importa a biblioteca de selecionar imagem
 import 'package:flutter_gemini/flutter_gemini.dart'; // Importa a biblioteca do Gemini
 import 'package:flutter/foundation.dart'; // Importa tipos primitivos do Flutter
-import 'package:quick_read/degrade.dart'; // Importa o Container com o degrade de fundo
+import 'package:quick_read/degrade.dart';
+import 'package:quick_read/resumo.model.dart'; // Importa o Container com o degrade de fundo
 
 class ResumoPage extends StatefulWidget {
   @override
@@ -67,6 +69,18 @@ class _ResumoPageState extends State<ResumoPage> {
       setState(() {
         _result = result?.output ??
             'Nenhum resumo disponível'; // Atualiza o estado com o resumo
+        final user = FirebaseAuth.instance.currentUser;
+        final resumo = Resumo(
+          userId: user!.uid,
+          data: Timestamp.now(),
+          resumo: result?.output ?? 'Nenhum resumo disponível',
+        );
+
+        FirebaseFirestore.instance
+            .collection('resumos')
+            .add(resumo.toJson())
+            .then((value) => print("Resumo adicionado"))
+            .catchError((error) => print("Failed to add resumo: $error"));
       });
     } catch (e) {
       setState(() {
@@ -184,6 +198,9 @@ class _ResumoPageState extends State<ResumoPage> {
                       icon: const Icon(Icons.add_a_photo_rounded),
                       label: const Text('Tirar Foto'),
                     ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
                   ElevatedButton.icon(
                     onPressed: () async {
                       final Uint8List? image =
@@ -197,6 +214,16 @@ class _ResumoPageState extends State<ResumoPage> {
                     },
                     icon: const Icon(Icons.add_photo_alternate_rounded),
                     label: const Text('Escolher da Galeria'),
+                  ),
+                  const SizedBox(
+                    height: 20.0,
+                  ),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/historico');
+                    },
+                    icon: const Icon(Icons.access_time_rounded),
+                    label: const Text('Histórico'),
                   ),
                 ],
               ),

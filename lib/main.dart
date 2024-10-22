@@ -1,6 +1,8 @@
 import 'package:flutter_gemini/flutter_gemini.dart'; // Importa o pacote flutter_gemini para integração com API
+import 'package:quick_read/historico.dart';
 import 'firebase_options.dart'; // Importa configurações específicas do Firebase
 import 'package:firebase_core/firebase_core.dart'; // Importa o núcleo do Firebase
+import 'package:cloud_firestore/cloud_firestore.dart'; // Importa o Firestore
 import 'package:flutter/material.dart'; // Importa o pacote principal de componentes visuais do Flutter
 import 'package:quick_read/login.dart'; // Importa a tela de login
 import 'package:quick_read/create-user.dart'; // Importa a tela de criação de usuário
@@ -110,7 +112,9 @@ class MyApp extends StatelessWidget {
               '/login': (context) => LoginPage(), // Rota para a tela de login
               '/create-user': (context) =>
                   CreateUserPage(), // Rota para a tela de criação de usuário
-              '/resumo': (context) => ResumoPage() // Rota para a tela de resumo
+              '/resumo': (context) =>
+                  ResumoPage(), // Rota para a tela de resumo
+              '/historico': (context) => HistoricoPage(),
             },
           );
         },

@@ -179,7 +179,7 @@ class _ResumoPageState extends State<ResumoPage> {
                   child: Image.memory(_imageBytes!,
                       height: 240, fit: BoxFit.cover),
                 ),
-              Row(
+              Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   // Exibe o primeiro ElevatedButton apenas se não for Web

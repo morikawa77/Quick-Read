@@ -36,5 +36,11 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+  <key>NSCameraUsageDescription</key>
+  <string>Este aplicativo precisa acessar a câmera para capturar imagens.</string>
+  <key>NSPhotoLibraryUsageDescription</key>
+  <string>Este aplicativo precisa acessar a galeria para selecionar imagens.</string>
+  <key>NSMicrophoneUsageDescription</key>
+  <string>Este aplicativo precisa acessar o microfone para gravar áudio.</string>
 </dict>
 </plist>
